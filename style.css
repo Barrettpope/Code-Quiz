@@ -1,0 +1,35 @@
+body {
+    background-image: url(https://wallpaperaccess.com/full/296951.jpg);
+    color: #383c3c;
+}
+
+.navbar-brand:hover {
+    opacity: 0.75;
+}
+
+.jumbotron {
+    width: 70%;
+}
+
+.lead {
+    font-size: 28px;
+}
+
+.btn {
+    text-align: left;
+    font-size: 24px;
+    background-color: #e7717d;
+    border-color: #e7717d;
+    
+}
+
+.btn:hover {
+    background-color: #383c3c;
+    border-color: #383c3c;
+}
+
+
+.fas {
+    font-size: 40px;
+    color: #e7717d
+}
