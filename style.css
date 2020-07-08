@@ -1,6 +1,6 @@
 body {
     background-image: url(https://wallpaperaccess.com/full/296951.jpg);
-    color: #383c3c;
+    color: #343a3f
 }
 
 .navbar-brand:hover {
@@ -24,12 +24,25 @@ body {
 }
 
 .btn:hover {
-    background-color: #383c3c;
-    border-color: #383c3c;
+    background-color: #343a3f;
+    border-color: #343a3f;
+}
+
+.highscores {
+    font-size: 20px;
+    margin-top: 50px;
 }
 
 
 .fas {
     font-size: 40px;
     color: #e7717d
+}
+
+#start {
+    text-align: center;
+}
+
+#questionsSection, #submitSection {
+    display: none;
 }
