@@ -1,24 +1,23 @@
-var buttonA = document.getElementById("btnA");
-var buttonB = document.getElementById("btnB");
-var buttonC = document.getElementById("btnC");
-var buttonD = document.getElementById("btnD");
-var quizQuestions = document.getElementById("question");
-var answerResponse = document.getElementById("user-answer");
-var initials = document.querySelector("#inputInitials");
-var finalScore = document.querySelector("#final-score");
-var submitButton = document.querySelector("#submit");
-buttonA.addEventListener("click", switchQuestion);
-buttonB.addEventListener("click", switchQuestion);
-buttonC.addEventListener("click", switchQuestion);
-buttonD.addEventListener("click", switchQuestion);
-submitButton.addEventListener("click", submitScore);
-
-var startButton = document.querySelector("#start-button");
 var startSection = document.querySelector("#startSection");
-var submitSection = document.querySelector("#submitSection")
-startButton.addEventListener("click", startQuiz);
-var questionsSection = document.querySelector("#questionsSection");
+var startButton = document.querySelector("#start-button");
 var timerDisplay = document.querySelector("#timer");
+var questionsSection = document.querySelector("#questionsSection");
+var quizQuestions = document.querySelector("#question");
+var buttonA = document.querySelector("#btnA");
+var buttonB = document.querySelector("#btnB");
+var buttonC = document.querySelector("#btnC");
+var buttonD = document.querySelector("#btnD");
+var answerResponse = document.querySelector("#user-answer");
+var submitSection = document.querySelector("#submitSection")
+var finalScore = document.querySelector("#final-score");
+var initials = document.querySelector("#inputInitials");
+var submitButton = document.querySelector("#submit");
+
+var timer;
+var timeCount = 60;
+var index = 0;
+var scores = [];
+
 var questions = [{
         question: "Inside which HTML element do we put the Javascript?",
         options: ["<javascript>", "<scripting>", "<js>", "<script>"],
@@ -46,9 +45,13 @@ var questions = [{
     },
 
 ]
-var timer;
-var timeCount = 60;
-var index = 0;
+
+startButton.addEventListener("click", startQuiz);
+buttonA.addEventListener("click", switchQuestion);
+buttonB.addEventListener("click", switchQuestion);
+buttonC.addEventListener("click", switchQuestion);
+buttonD.addEventListener("click", switchQuestion);
+submitButton.addEventListener("click", submitScore);
 
 function startQuiz() {
     assignQuestions();
@@ -78,9 +81,8 @@ function assignQuestions() {
 }
 
 function switchQuestion() {
-    var selectAnswer = event.target.innerText;
-    console.log(index);
-    if (selectAnswer === questions[index - 1].answer) {
+    var selectedAnswer = event.target.innerText;
+    if (selectedAnswer === questions[index - 1].answer) {
         answerResponse.innerText = "Correct!";
     } else {
         timeCount -= 15;
@@ -98,12 +100,10 @@ function switchQuestion() {
         clearInterval(timer);
         questionsSection.style.display = "none";
         submitSection.style.display = "block";
-        finalScore.innerText = timeCount;
+        finalScore.innerText = timeCount += 15;
     }
 
 }
-
-var scores = [];
 
 function submitScore() {
     scores.push({
@@ -112,4 +112,5 @@ function submitScore() {
     });
 
     localStorage.setItem("scores", JSON.stringify(scores));
+    initials.value = "";
 }
