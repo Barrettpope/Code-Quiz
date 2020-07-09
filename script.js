@@ -1,3 +1,4 @@
+// Assigning variables to selected HTML elements
 var startSection = document.querySelector("#startSection");
 var startButton = document.querySelector("#start-button");
 var timerDisplay = document.querySelector("#timer");
@@ -13,11 +14,14 @@ var finalScore = document.querySelector("#final-score");
 var initials = document.querySelector("#inputInitials");
 var submitButton = document.querySelector("#submit");
 
+
+// Assigning variables
 var timer;
 var timeCount = 60;
 var index = 0;
 var scores = [];
 
+// Developing quiz questions with corresponding options and answers
 var questions = [{
         question: "Inside which HTML element do we put the Javascript?",
         options: ["<javascript>", "<scripting>", "<js>", "<script>"],
@@ -46,6 +50,7 @@ var questions = [{
 
 ]
 
+// Adding event listeners to various buttons throughout the application
 startButton.addEventListener("click", startQuiz);
 buttonA.addEventListener("click", switchQuestion);
 buttonB.addEventListener("click", switchQuestion);
@@ -53,6 +58,7 @@ buttonC.addEventListener("click", switchQuestion);
 buttonD.addEventListener("click", switchQuestion);
 submitButton.addEventListener("click", submitScore);
 
+// Switching from the start section to the questions section && triggering timer start
 function startQuiz() {
     assignQuestions();
     questionsSection.style.display = "block";
@@ -60,6 +66,7 @@ function startQuiz() {
     timer = setInterval(startQuestions, 1000);
 }
 
+// Decrementing timer count as array of questions begin
 function startQuestions() {
     timeCount--;
     timerDisplay.innerText = timeCount;
@@ -71,6 +78,7 @@ function startQuestions() {
 
 }
 
+// Displaying quiz questions and options
 function assignQuestions() {
     quizQuestions.innerText = questions[index].question;
     buttonA.innerText = questions[index].options[0];
@@ -80,6 +88,7 @@ function assignQuestions() {
     index++;
 }
 
+// Recording a response dependent upon whether the user's answer equals the stored answer && switching to the submit scores section once timer expires or all questions have been answered
 function switchQuestion() {
     var selectedAnswer = event.target.innerText;
     if (selectedAnswer === questions[index - 1].answer) {
@@ -105,6 +114,7 @@ function switchQuestion() {
 
 }
 
+// Pushing the recorded final score and user's initials once submit button is clicked
 function submitScore() {
     scores.push({
         initials: initials.value,
@@ -114,3 +124,12 @@ function submitScore() {
     localStorage.setItem("scores", JSON.stringify(scores));
     initials.value = "";
 }
+
+
+
+
+// Remove blue outline / highlight on buttons
+// High scores aren't saving when I go through quiz a second time.
+// Clear scores function
+// Final score not logging 0 if time fully expires
+// Time not going to 0 when possibility of a negative value (10 seconds with 15 second deduction, logs 10 rather than 0)
