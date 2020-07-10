@@ -1,20 +1,25 @@
+/* Applies a background photo to the application and assigns a color for the body's text content */
 body {
     background-image: url(https://wallpaperaccess.com/full/296951.jpg);
     color: #343a3f
 }
 
+/* Creates a hover effect over the "View Highscores" link */
 .navbar-brand:hover {
     opacity: 0.75;
 }
 
+/* Reduces the width of the Jumbotrons */
 .jumbotron {
     width: 70%;
 }
 
+/* Enlarges the font-size of the text just above the hr element in each jumbotron */
 .lead {
     font-size: 28px;
 }
 
+/* Styles all of the buttons in the application */
 .btn {
     text-align: left;
     font-size: 24px;
@@ -23,31 +28,37 @@ body {
 
 }
 
+/* Creates a hover effect over the application's buttons */
 .btn:hover {
     background-color: #343a3f;
     border-color: #343a3f;
 }
 
+/* Pinpoints the buttons on the questions section and adds hover effect  */
 #btnA:hover {
     background-color: #343a3f;
     border-color: #343a3f;
 }
 
+/* Pinpoints the buttons on the questions section and adds hover effect  */
 #btnB:hover {
     background-color: #343a3f;
     border-color: #343a3f;
 }
 
+/* Pinpoints the buttons on the questions section and adds hover effect  */
 #btnC:hover {
     background-color: #343a3f;
     border-color: #343a3f;
 }
 
+/* Pinpoints the buttons on the questions section and adds hover effect  */
 #btnD:hover {
     background-color: #343a3f;
     border-color: #343a3f;
 }
 
+/* Creates styling when button is clicked */
 .btn:active {
     background-color: #e7717d;
     border-color: #e7717d;
@@ -55,6 +66,7 @@ body {
     box-shadow: none;
 }
 
+/* Creates styling when button is clicked */
 .btn:focus {
     background-color: #e7717d;
     border-color: #e7717d;
@@ -62,24 +74,24 @@ body {
     box-shadow: none;
 }
 
+/* Adds styling to the "Go Back" and "Clear Highscores" buttons in the highscores.html file */
 .highscores {
     font-size: 20px;
     margin-top: 50px;
 }
 
+/* Adds styling to the Font Awesome icon used in the questions section */
 .fas {
     font-size: 40px;
     color: #e7717d
 }
 
-#start {
-    text-align: center;
-}
-
+/* Enlarges the size of the "Start Quiz" button */
 #start-button {
     font-size: 30px;
 }
 
+/* Hides the questions and submit section from view when application is first opened */
 #questionsSection,
 #submitSection {
     display: none;
