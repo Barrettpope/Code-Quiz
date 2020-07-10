@@ -43,7 +43,7 @@ var questions = [{
         answer: "onclick"
     },
     {
-        question: "How to write an IF statement for executing some code of 'i' is NOT equal to 5?",
+        question: "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
         options: ["if(i <> 5)", "if(i != 5)", "if i =! 5 then", "if i <> 5"],
         answer: "if (i != 5)"
     },
