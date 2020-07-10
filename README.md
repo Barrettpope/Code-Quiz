@@ -12,10 +12,15 @@ As soon as the user clicks the "Start Quiz" button, they are immediately taken t
 
 Upon making it through all 5 questions OR once the timer reaches zero, the user is then presented with a new interface displaying the final score -- in this case, the final count on the timer. Secondly, there is an input box where the user can submit his or her initials to have the final score stored on the highscores page.
 
-The highscores page utilizes local storage to store the user's initials and corresponding score. This content is removed as soon as the user clicks the "Clear Highscores" button and subsequently refreshes the page. 
+The highscores page utilizes local storage to store the user's initials and corresponding score. This content is removed as soon as the user clicks the "Clear Highscores" button and subsequently refreshes the page.
 
+Finally, the user can click the "Go Back" button on the highscores page to navigate to the beginning of the quiz, where he or she can choose to exit the application or select the "Start Quiz" button to take the quiz again.
 
 ## Visuals
+![](Images/start.png)
+![](Images/questions.png)
+![](Images/submitscore.png)
+![](Images/highscores.png)
 
 ## Link to Deployed Application
 https://barrettpope.github.io/Code-Quiz/
