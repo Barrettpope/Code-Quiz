@@ -15,7 +15,7 @@ var initials = document.querySelector("#inputInitials");
 var submitButton = document.querySelector("#submit");
 
 
-// Assigning variables
+// Assigning global variables
 var timer;
 var timeCount = 60;
 var index = 0;
@@ -96,7 +96,7 @@ function switchQuestion() {
     } else {
         timeCount -= 15;
         answerResponse.innerText = "Wrong!";
-        if (timeCount < 0) {
+        if (timeCount <= 0) {
             timeCount === 0;
             clearInterval(timer);
             questionsSection.style.display = "none";
@@ -116,6 +116,8 @@ function switchQuestion() {
 
 // Pushing the recorded final score and user's initials once submit button is clicked
 function submitScore() {
+    scores = JSON.parse(localStorage.getItem('scores')) || [];
+
     scores.push({
         initials: initials.value,
         score: timeCount
@@ -128,8 +130,5 @@ function submitScore() {
 
 
 
-// Remove blue outline / highlight on buttons
-// High scores aren't saving when I go through quiz a second time.
+
 // Clear scores function
-// Final score not logging 0 if time fully expires
-// Time not going to 0 when possibility of a negative value (10 seconds with 15 second deduction, logs 10 rather than 0)
